@@ -27,4 +27,4 @@ if(process.env.NODE_ENV === 'dev'){
     urlDB = "mongodb://strider:uBOhX8cZlOcBhoiF@cluster0-nrc0o.mongodb.net/cafe";
 }
 
-process.envURLDB =  urlDB;
+process.env.URLDB =  urlDB;
