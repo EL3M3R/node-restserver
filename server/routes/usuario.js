@@ -39,6 +39,7 @@ const app = express();
   });
   
   app.post('/usuario', function (req, res) {
+      
       let body = req.body;
     let usuario = new Usuario({
         nombre: body.nombre,
