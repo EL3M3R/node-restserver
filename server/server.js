@@ -1,8 +1,10 @@
 require('./config/config');
 
-const express = require('express')
-const app = express()
-const bodyParser = require('body-parser')
+const express = require('express');
+const mongoose = require('mongoose');
+
+const app = express();
+const bodyParser = require('body-parser');
 
 // parse various different custom JSON types as JSON
 app.use(bodyParser.urlencoded({extended: false}));
@@ -10,31 +12,21 @@ app.use(bodyParser.urlencoded({extended: false}));
 // parse some custom thing into a Buffer
 app.use(bodyParser.json());
 
- /***********************************************************/
- 
-app.get('/usuario', function (req, res) {
-  res.send('Hello World usuario GET')
-});
+app.use( require('./routes/usuario'));
 
-app.post('/usuario', function (req, res) {
-    let body = req.body;
-    res.json({
-       usuario:body
-    })
-});
+  mongoose.connect(process.envURLDB,
+          {
+          useNewUrlParser   : true ,
+          useCreateIndex    : true,
+          useUnifiedTopology: true 
+        },
+          (err , resp)=>{
+      if(err) throw err;
 
-  app.put('/usuario/:id', function (req, res) {
-      let id = req.params.id;
-    res.send({
-        id
-    })
+      console.log("BASE DE DATOS ONLINE");
   });
 
-  app.delete('/usuario', function (req, res) {
-    res.send('Hello World usuario DELETE')
-  })
- 
+
 app.listen(process.env.PORT , ()=> {
     console.log("Escuchando al puerto :" , process.env.PORT);
-}
-);
+});
