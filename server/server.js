@@ -4,15 +4,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const app = express();
+
 const bodyParser = require('body-parser');
 
 // parse various different custom JSON types as JSON
 app.use(bodyParser.urlencoded({extended: false}));
- 
 // parse some custom thing into a Buffer
 app.use(bodyParser.json());
+//configuracion global de rutas
+app.use( require('./routes/index'));
 
-app.use( require('./routes/usuario'));
 
   mongoose.connect(process.env.URLDB,
          /* {
