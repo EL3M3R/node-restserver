@@ -1,4 +1,4 @@
 user : strider 
-pwd: uBOhX8cZlOcBhoiF
+pwd: 7ZgEoXit9ZMDEdLy
 
 mongodb+srv://strider:uBOhX8cZlOcBhoiF@cluster0-nrc0o.mongodb.net/cafe
