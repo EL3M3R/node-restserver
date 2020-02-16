@@ -15,11 +15,11 @@ app.use(bodyParser.json());
 app.use( require('./routes/usuario'));
 
   mongoose.connect(process.env.URLDB,
-          {
+         /* {
           useNewUrlParser   : true ,
           useCreateIndex    : true,
           useUnifiedTopology: true 
-        },
+        },*/
           (err , resp)=>{
       if(err) throw err;
 
