@@ -1,0 +1,26 @@
+<p>user works!</p>
+<input type="text" #textId>
+<button (click) = "getUser(textId.value)">Get user</button>
+
+<hr>
+
+
+<ng-container **ngIf="notFound">
+
+    <p>User Not Found</p>
+
+</ng-container>
+
+<ng-container **ngIf="user">
+    <div>
+        <p>Id: {{user.id}}</p>
+    </div>
+
+    <div>
+        <p>Id: {{user.nombre}}</p>
+    </div>
+
+    <div>
+        <p>Id: {{user.img}}</p>
+    </div>
+</ng-container>

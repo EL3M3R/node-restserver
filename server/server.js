@@ -17,6 +17,8 @@ app.use(bodyParser.json());
 app.use( require('./routes/index'));
 
 app.use(express.static(path.resolve(__dirname , '../public')));
+
+
   mongoose.connect(process.env.URLDB,
          /* {
           useNewUrlParser   : true ,
